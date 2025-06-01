@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} {% endblock %}</title>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+</head>
+<body>
+{% include 'header.html' %}
+{%block content %}
+
+{%endblock%}
+
+{% include 'footer.html' %}
+
+
+<!-- Load Materialize JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<!-- Load jQuery first -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+
+<!-- Load Owl Carousel JS -->
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+
+<script>
+  // Initialize Materialize components AFTER materialize JS loaded
+  M.AutoInit();
+
+  // Initialize Owl Carousel AFTER jQuery and Owl Carousel JS loaded and document is ready
+  $(document).ready(function() {
+    $(".owl-carousel").owlCarousel({
+      loop: true,
+  margin: 20,
+  nav: false,          // Hide arrows if you want only manual drag
+  dots: true,          // Show dots if you want
+  mouseDrag: true,     // Enable dragging with mouse
+  touchDrag: true,     // Enable touch swipe on mobile
+  responsive: {
+    0: { items: 2 },
+    600: { items: 3 },
+    1000: { items: 4 }
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

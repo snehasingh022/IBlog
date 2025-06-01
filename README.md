@@ -23,5 +23,5 @@ iBlogs is a Django-based blog application where users can browse blog posts by c
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/iblogs.git
+   git clone https://github.com/snehasingh022/IBlog.git
    cd iblogs
